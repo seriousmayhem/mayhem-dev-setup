@@ -1,0 +1,32 @@
+name: release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      # Machines refuse anything else, so a release that fails these would be unusable.
+      - name: Tag is signed by an allowed key
+        run: git -c gpg.format=ssh -c gpg.ssh.allowedSignersFile=allowed_signers verify-tag "$GITHUB_REF_NAME"
+
+      - name: Bootstrap scripts embed allowed_signers
+        run: |
+          while IFS= read -r line; do
+            grep -qF "$line" bootstrap.sh && grep -qF "$line" bootstrap.ps1 ||
+              { echo "bootstrap scripts are missing: $line"; exit 1; }
+          done < allowed_signers
+
+      - name: Publish
+        run: gh release create "$GITHUB_REF_NAME" bootstrap.sh bootstrap.ps1 --verify-tag --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}

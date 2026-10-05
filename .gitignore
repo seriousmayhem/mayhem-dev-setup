@@ -1,0 +1,4 @@
+.claude/
+.memory/
+# Design docs live in the private mayhem-fleet repo; this repo is public.
+docs/
