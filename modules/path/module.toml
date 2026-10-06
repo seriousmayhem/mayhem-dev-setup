@@ -1,0 +1,1 @@
+description = "Put the tool bin dir (uv's, ~/.local/bin by default) on the user's PATH"

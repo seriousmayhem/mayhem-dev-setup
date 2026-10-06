@@ -1,0 +1,2 @@
+description = "ripgrep (rg), pinned release binary"
+requires = ["path"]

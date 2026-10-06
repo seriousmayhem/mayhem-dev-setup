@@ -1,0 +1,19 @@
+[project]
+name = "mayhem"
+version = "0.1.0"
+description = "Converges a machine to mayhem profiles from plain check/install scripts"
+requires-python = ">=3.13"
+dependencies = ["questionary>=2.1"]
+
+[project.scripts]
+mayhem = "mayhem.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

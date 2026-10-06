@@ -1,0 +1,2 @@
+description = "Command-line basics every machine gets"
+modules = ["git", "gh", "jq", "ripgrep"]
