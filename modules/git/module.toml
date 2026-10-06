@@ -1,0 +1,3 @@
+description = "git at or above the floor, with cross-OS settings and the user's identity"
+# The OS package manager owns git; versions.toml holds a floor, not an exact pin.
+pin = "floor"

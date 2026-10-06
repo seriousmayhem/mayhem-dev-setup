@@ -1,0 +1,2 @@
+description = "GitHub CLI, pinned release binary"
+requires = ["path"]

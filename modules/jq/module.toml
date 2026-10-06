@@ -1,0 +1,2 @@
+description = "jq, pinned release binary"
+requires = ["path"]

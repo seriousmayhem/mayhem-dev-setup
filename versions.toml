@@ -1,0 +1,18 @@
+# Every version the public modules converge to, keyed by module name. The private fleet
+# repo's versions.toml is layered over this one.
+#
+# Each pin carries one of:
+#   # renovate: ...  Renovate bumps it (see renovate.json)
+#   # floor: ...     a minimum owned by the OS package manager; not bumped
+
+# floor: Ubuntu 24.04 ships git 2.43
+git = "2.43.0"
+
+# renovate: datasource=github-releases depName=cli/cli extractVersion=^v(?<version>.+)$
+gh = "2.102.0"
+
+# renovate: datasource=github-releases depName=jqlang/jq extractVersion=^jq-(?<version>.+)$
+jq = "1.8.2"
+
+# renovate: datasource=github-releases depName=BurntSushi/ripgrep
+ripgrep = "15.2.0"
