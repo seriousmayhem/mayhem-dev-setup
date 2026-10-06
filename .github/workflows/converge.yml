@@ -43,7 +43,7 @@ jobs:
           path: ~/.mayhem/logs
 
   gitleaks:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     env:
       # renovate: datasource=github-releases depName=gitleaks/gitleaks
       GITLEAKS_VERSION: "8.30.1"
