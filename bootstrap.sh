@@ -27,7 +27,7 @@ ensure_uv() {
   export PATH="$HOME/.local/bin:$PATH"
   command -v uv >/dev/null && return
   say "Installing uv"
-  # uv isn't packaged for Ubuntu 24.04; Astral's installer is the native one.
+  # uv isn't packaged for Ubuntu 24.04 or 26.04; Astral's installer is the native one.
   curl -LsSf https://astral.sh/uv/install.sh | sh
 }
 
