@@ -9,7 +9,7 @@
 git = "2.43.0"
 
 # renovate: datasource=github-releases depName=cli/cli extractVersion=^v(?<version>.+)$
-gh = "2.102.0"
+gh = "2.103.2"
 
 # renovate: datasource=github-releases depName=jqlang/jq extractVersion=^jq-(?<version>.+)$
 jq = "1.8.2"
