@@ -14,7 +14,9 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-24.04, ubuntu-26.04, windows-2025]
-    runs-on: ${{ matrix.os }}
+    # The 24.04 leg follows CI_RUNNER_SMALL (a 24.04 image on every provider);
+    # 26.04 and Windows are GitHub-hosted only.
+    runs-on: ${{ matrix.os == 'ubuntu-24.04' && vars.CI_RUNNER_SMALL || matrix.os }}
     defaults:
       run:
         shell: bash
@@ -43,7 +45,7 @@ jobs:
           path: ~/.mayhem/logs
 
   gitleaks:
-    runs-on: ubuntu-26.04
+    runs-on: ${{ vars.CI_RUNNER_SMALL || 'ubuntu-26.04' }}
     env:
       # renovate: datasource=github-releases depName=gitleaks/gitleaks
       GITLEAKS_VERSION: "8.30.1"
