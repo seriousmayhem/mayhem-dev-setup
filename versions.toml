@@ -15,4 +15,4 @@ gh = "2.102.0"
 jq = "1.8.2"
 
 # renovate: datasource=github-releases depName=BurntSushi/ripgrep
-ripgrep = "15.2.0"
+ripgrep = "16.0.0"
